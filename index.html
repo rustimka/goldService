@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Ремонт и продажа телефонов, планшетов, компьютеров по выгодным ценам.">
+	<meta name="keywords" content="ремонт телефонов, купить планшет, ремонт компьютеров, Comrat, техника">
+
+    <title>Ремонт | Телефонов Компьютеров Планшетов</title>
+
+    <!-- Favicon -->
+	<link href="img/favicon.ico" rel="shortcut icon"/>
+
+    <!-- Google Font -->
+	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,300i,400,400i,700,700i" rel="stylesheet">
+
+    <!-- Stylesheets -->
+	<link rel="stylesheet" href="css/bootstrap.min.css"/>
+	<link rel="stylesheet" href="css/font-awesome.min.css"/>
+	<link rel="stylesheet" href="css/flaticon.css"/>
+	<link rel="stylesheet" href="css/slicknav.min.css"/>
+	<link rel="stylesheet" href="css/jquery-ui.min.css"/>
+	<link rel="stylesheet" href="css/owl.carousel.min.css"/>
+	<link rel="stylesheet" href="css/animate.css"/>
+	<link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+	<!-- Page Preloder -->
+	<div id="preloder">
+		<div class="loader"></div>
+	</div>
+
+	<!-- Header section -->
+	<header class="header-section">
+		<div class="header-top">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-2 text-center text-lg-left">
+						<!-- logo -->
+						<a href="./index.html" class="site-logo">
+							<img src="img/logo.png" alt="">
+						</a>
+					</div>
+					<div class="col-xl-6 col-lg-5">
+						<form class="header-search-form">
+							<input type="text" placeholder="Поиск по квитанции">
+							<button><i class="flaticon-search"></i></button>
+						</form>
+					</div>
+					<div class="col-xl-4 col-lg-5">
+						<div class="user-panel">
+							<div class="up-item">
+								<i class="flaticon-profile"></i>
+								<a href="#" onclick="openRegistrationForm()" class="text-blue-500 hover:underline">Регистрация</a> | 
+								<a href="#" onclick="openLoginForm()" class="text-blue-500 hover:underline">Войти</a>
+							</div>
+							
+							<!-- Модальное окно для регистрации и входа -->
+							<div id="authModal" class="fixed inset-0 bg-gray-600 bg-opacity-50 flex justify-center items-center hidden z-50">
+								<div class="bg-white p-8 rounded-lg w-96 relative">
+									<span onclick="closeAuthForm()" class="absolute top-4 right-4 cursor-pointer text-xl text-gray-600">&times;</span>
+							
+									<!-- Регистрация форма -->
+									<div id="registrationForm">
+										<h2 class="text-2xl font-semibold mb-4">Регистрация</h2>
+										<form action="register.php" method="POST">
+											<label for="username" class="block text-sm font-medium text-gray-700">Имя пользователя:</label>
+											<input type="text" id="username" name="username" required class="w-full mt-2 p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"><br><br>
+							
+											<label for="email" class="block text-sm font-medium text-gray-700">Электронная почта:</label>
+											<input type="email" id="email" name="email" required class="w-full mt-2 p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"><br><br>
+							
+											<label for="password" class="block text-sm font-medium text-gray-700">Пароль:</label>
+											<input type="password" id="password" name="password" required class="w-full mt-2 p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"><br><br>
+							
+											<button type="submit" class="w-full py-2 mt-4 bg-blue-500 text-white rounded-lg hover:bg-blue-600 focus:outline-none">Зарегистрироваться</button>
+										</form>
+							
+										<p class="mt-4 text-center text-sm text-gray-600">Уже есть аккаунт? <a href="#" onclick="showLoginForm()" class="text-blue-500 hover:underline">Войти</a></p>
+									</div>
+							
+									<!-- Вход в учетную запись форма -->
+									<div id="loginForm" class="hidden">
+										<h2 class="text-2xl font-semibold mb-4">Вход в учетную запись</h2>
+										<form action="login.php" method="POST">
+											<label for="loginEmail" class="block text-sm font-medium text-gray-700">Электронная почта:</label>
+											<input type="email" id="loginEmail" name="loginEmail" required class="w-full mt-2 p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"><br><br>
+							
+											<label for="loginPassword" class="block text-sm font-medium text-gray-700">Пароль:</label>
+											<input type="password" id="loginPassword" name="loginPassword" required class="w-full mt-2 p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"><br><br>
+							
+											<button type="submit" class="w-full py-2 mt-4 bg-blue-500 text-white rounded-lg hover:bg-blue-600 focus:outline-none">Войти</button>
+										</form>
+							
+										<p class="mt-4 text-center text-sm text-gray-600">Нет аккаунта? <a href="#" onclick="showRegistrationForm()" class="text-blue-500 hover:underline">Зарегистрироваться</a></p>
+									</div>
+								</div>
+							</div>
+								
+							</div>
+
+							<!--<div class="up-item">
+								<div class="shopping-card">
+									<i class="flaticon-bag"></i>
+									<span>0</span>
+								</div>
+								<a href="#">Скидочная карта</a>
+							</div>-->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<nav class="main-navbar">
+			<div class="container">
+				<!-- menu -->
+				<ul class="main-menu">
+					<li><a href="#">Домой</a>
+                        <ul class="sub-menu">
+							<li><a href="#"></a></li>
+							<li><a href="#"></a></li>
+							<li><a href="#"></a></li>
+							<li><a href="#"></a></li>
+							<!-- <li><a href="#">Ушатаные</a></li> -->
+						</ul>
+                    </li>
+					<li><a href="#">Ремонт</a>
+                        <ul class="sub-menu">
+							<li><a href="#">Телефоны</a></li>
+							<li><a href="#">Компьютеры</a></li>
+							<li><a href="#">Планшеты</a></li>
+							<li><a href="#">GPS навигаторы</a></li>
+							<!-- <li><a href="#">Ушатаные</a></li> -->
+						</ul>
+                    </li>
+					<li><a href="#">Продажа</a>
+                        <ul class="sub-menu">
+							<li><a href="#">Телефоны</a></li>
+							<li><a href="#">Компьютеры</a></li>
+							<li><a href="#">Планшеты</a></li>
+							<li><a href="#">GPS навигаторы</a></li>
+							<li><a href="#">Гидрогелевые пленки</a></li>
+							<li><a href="#">Плотеры</a></li>
+							<!-- <li><a href="#">Ушатаные</a></li> -->
+						</ul>
+                    </li>
+					<li><a href="#">Покупка
+						<span class="new">New</span>
+					</a></li>
+					<li><a href="#">Галерея</a>
+						<ul class="sub-menu">
+							<li><a href="#">Телефоны</a></li>
+							<li><a href="#">Компьютеры</a></li>
+							<li><a href="#">Планшеты</a></li>
+							<li><a href="#">GPS навигаторы</a></li>
+							<!-- <li><a href="#">Ушатаные</a></li> -->
+						</ul>
+					</li>
+					
+					<li><a href="#">Отзывы наших клиентов</a></li>
+				</ul>
+
+				<!-- Кнопка для открытия модального окна -->
+				<button onclick="openModal()"
+					class="fixed bottom-6 right-6 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-5 rounded-full shadow-lg z-50 transition">
+					📱 Заявка за ремонт
+				</button>
+				
+				<!-- Модальное окно -->
+				<div id="repairModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+					<div class="bg-white rounded-2xl shadow-lg p-6 w-full max-w-lg relative">
+						<!-- Кнопка закрытия -->
+						<button onclick="closeModal()"
+							class="absolute top-4 right-4 text-gray-500 hover:text-black text-2xl font-bold">&times;</button>
+				
+						<h2 class="text-2xl font-bold text-center text-gray-800 mb-6">Онлайн заявка за ремонт</h2>
+				
+						<!-- Сообщение об успехе -->
+						<div id="successMessage" class="hidden text-green-600 text-center font-medium mb-4">
+							✅ Заявката е изпратена успешно!
+						</div>
+				
+						<!-- Форма -->
+						<form id="repairForm" action="https://formspree.io/f/xyzebpnj" method="POST" class="space-y-4">
+							<div>
+								<label for="name" class="block text-sm font-medium text-gray-700">Вашето име</label>
+								<input type="text" name="name" id="name" required
+									class="mt-1 block w-full rounded-xl border border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500 px-4 py-2">
+							</div>
+				
+							<div>
+								<label for="phone" class="block text-sm font-medium text-gray-700">Телефон</label>
+								<input type="tel" name="phone" id="phone" required placeholder="+359..."
+									class="mt-1 block w-full rounded-xl border border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500 px-4 py-2">
+							</div>
+				
+							<div>
+								<label for="device" class="block text-sm font-medium text-gray-700">Тип на устройството</label>
+								<input type="text" name="device" id="device" placeholder="Например, iPhone 12"
+									class="mt-1 block w-full rounded-xl border border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500 px-4 py-2">
+							</div>
+				
+							<div>
+								<label for="issue" class="block text-sm font-medium text-gray-700">Кратко описание на проблема</label>
+								<textarea name="issue" id="issue" rows="4" placeholder="Какъв е проблемът с устройството?"
+									class="mt-1 block w-full rounded-xl border border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500 px-4 py-2"></textarea>
+							</div>
+				
+							<div class="text-center">
+								<button type="submit" id="submitBtn"
+									class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-6 rounded-xl transition inline-flex items-center justify-center">
+									<span id="submitText">Изпрати заявка</span>
+									<svg id="spinner" class="w-5 h-5 ml-2 text-white animate-spin hidden"
+										xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+										<circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4">
+										</circle>
+										<path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"></path>
+									</svg>
+								</button>
+							</div>
+						</form>
+					</div>
+				</div>
+
+
+			</div>
+		</nav>
+	</header>
+	<!-- Header section end -->
+
+
+
+	<!-- Hero section -->
+	<section class="hero-section">
+		<div class="hero-slider owl-carousel">
+			<div class="hs-item set-bg" data-setbg="img/bg.jpg">
+				<div class="container">
+					<div class="row">
+						<div class="col-xl-6 col-lg-7 text-white">
+							<span>Обектът е в процес на разработване</span>
+							<h2>gold service</h2>
+							<p>Обектът е в процес на разработване</p>
+							<a href="#" class="site-btn sb-line">Просмотреть</a>
+							<a href="#" class="site-btn sb-white">Сделать</a>
+						</div>
+					</div>
+					<!-- <div class="offer-card text-white">
+						<span>Прямо</span>
+						<h2>$20</h2>
+						<p>сейчас</p>
+					</div> -->
+				</div>
+			</div>
+			<div class="hs-item set-bg" data-setbg="img/bg-2.jpg">
+				<div class="container">
+					<div class="row">
+						<div class="col-xl-6 col-lg-7 text-white">
+							<span>Обектът е в процес на разработване</span>
+							<h2>gold service</h2>
+							<p> Обектът е в процес на разработване </p>
+							<a href="#" class="site-btn sb-line">Просмотреть</a>
+							<a href="#" class="site-btn sb-white">Сделать</a>
+						</div>
+					</div>
+					<!-- <div class="offer-card text-white">
+						<span>Прямо</span>
+						<h2>$10</h2>
+						<p>Сейчас</p>
+					</div> -->
+				</div>
+			</div>
+			<div class="hs-item set-bg" data-setbg="img/bg-3.jpg">
+				<div class="container">
+					<div class="row">
+						<div class="col-xl-6 col-lg-7 text-white">
+							<span>Обектът е в процес на разработване</span>
+							<h2>gold service</h2>
+							<p> Upgrade) </p>
+							<a href="#" class="site-btn sb-line">Просмотреть</a>
+							<a href="#" class="site-btn sb-white">Сделать</a>
+						</div>
+					</div>
+					<!-- <div class="offer-card text-white">
+						<span>Прямо</span>
+						<h2>$10</h2>
+						<p>Сейчас</p>
+					</div> -->
+				</div>
+			</div>
+			<div class="hs-item set-bg" data-setbg="img/bg-4.jpg">
+				<div class="container">
+					<div class="row">
+						<div class="col-xl-6 col-lg-7 text-white">
+							<span>Поступление</span>
+							<h2>gold service</h2>
+							<p> Upgrade2) </p>
+							<a href="#" class="site-btn sb-line">Просмотреть</a>
+							<a href="#" class="site-btn sb-white">Сделать</a>
+						</div>
+					</div>
+					<!-- <div class="offer-card text-white">
+						<span>Прямо</span>
+						<h2>$10</h2>
+						<p>Сейчас</p>
+					</div> -->
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="slide-num-holder" id="snh-1"></div>
+		</div>
+	</section>
+	<!-- Hero section end -->
+
+
+
+	<!-- Features section -->
+	<!-- <section class="features-section">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-4 p-0 feature">
+					<div class="feature-inner">
+						<div class="feature-icon">
+							<img src="img/icons/1.png" alt="#">
+						</div>
+						<h2>Fast Secure Payments</h2>
+					</div>
+				</div>
+				<div class="col-md-4 p-0 feature">
+					<div class="feature-inner">
+						<div class="feature-icon">
+							<img src="img/icons/2.png" alt="#">
+						</div>
+						<h2>Premium Products</h2>
+					</div>
+				</div>
+				<div class="col-md-4 p-0 feature">
+					<div class="feature-inner">
+						<div class="feature-icon">
+							<img src="img/icons/3.png" alt="#">
+						</div>
+						<h2>Free & fast Delivery</h2>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section> -->
+	<!-- Features section end -->
+
+
+	<!-- letest product section -->
+	<section class="top-letest-product-section">
+		<div class="container">
+			<div class="section-title">
+				<h2>ПОСЛЕДНИЕ ПРОДУКТЫ</h2>
+			</div>
+			<div class="product-slider owl-carousel">
+				<div class="product-item">
+					<div class="pi-pic">
+						<img src="./img/product/1.jpg" alt="">
+						<div class="pi-links">
+							<a href="#" class="add-card"><i class="flaticon-bag"></i><span>Добавить</span></a>
+							<a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a>
+						</div>
+					</div>
+					<div class="pi-text">
+						<h6>$35,00</h6>
+						<p>Meizu</p>
+					</div>
+				</div>
+				<div class="product-item">
+					<div class="pi-pic">
+						<div class="tag-new">New</div>
+						<img src="./img/product/2.jpg" alt="">
+						<div class="pi-links">
+							<a href="#" class="add-card"><i class="flaticon-bag"></i><span>Добавить</span></a>
+							<a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a>
+						</div>
+					</div>
+					<div class="pi-text">
+						<h6>$35,00</h6>
+						<p>Huawei</p>
+					</div>
+				</div>
+				<div class="product-item">
+					<div class="pi-pic">
+						<img src="./img/product/3.jpg" alt="">
+						<div class="pi-links">
+							<a href="#" class="add-card"><i class="flaticon-bag"></i><span>Добавить</span></a>
+							<a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a>
+						</div>
+					</div>
+					<div class="pi-text">
+						<h6>$35,00</h6>
+						<p>HTC </p>
+					</div>
+				</div>
+				<div class="product-item">
+						<div class="pi-pic">
+							<img src="./img/product/4.jpg" alt="">
+							<div class="pi-links">
+								<a href="#" class="add-card"><i class="flaticon-bag"></i><span>Добавить</span></a>
+								<a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a>
+							</div>
+						</div>
+						<div class="pi-text">
+							<h6>$35,00</h6>
+							<p>Oppo</p>
+						</div>
+					</div>
+				<div class="product-item">
+						<div class="pi-pic">
+							<img src="./img/product/6.jpg" alt="">
+							<div class="pi-links">
+								<a href="#" class="add-card"><i class="flaticon-bag"></i><span>Добавить</span></a>
+								<a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a>
+							</div>
+						</div>
+						<div class="pi-text">
+							<h6>$35,00</h6>
+							<p>Iphone</p>
+						</div>
+					</div>
+			</div>
+		</div>
+	</section>
+	<!-- letest product section end -->
+
+
+
+	<!-- Product filter section -->
+	<section class="product-filter-section">
+		<div class="container">
+			<div class="section-title">
+				<h2>ПОСМОТРЕТЬ САМЫЕ ПРОДАВАЕМЫЕ</h2>
+			</div>
+			<ul class="product-filter-menu">
+				<li><a href="#">Топовые</a></li>
+				<li><a href="#">Дешевые</a></li>
+				<li><a href="#">Мошные</a></li>
+				<li><a href="#">Бюджетные</a></li>
+				<li><a href="#">В росрочку</a></li>
+				<li><a href="#">В кредит</a></li>
+				<li><a href="#">Гламурные</a></li>
+			</ul>
+			<div class="row">
+				<div class="col-lg-3 col-sm-6">
+					<div class="product-item">
+						<div class="pi-pic">
+							<img src="./img/product/5.jpg" alt="">
+							<div class="pi-links">
+								<a href="#" class="add-card"><i class="flaticon-bag"></i><span>Купить</span></a>
+								<a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a>
+							</div>
+						</div>
+						<div class="pi-text">
+							<h6>$35,00</h6>
+							<p>Samsung</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3 col-sm-6">
+					<div class="product-item">
+						<div class="pi-pic">
+							<div class="tag-sale">Продан</div>
+							<img src="./img/product/6.jpg" alt="">
+							<div class="pi-links">
+								<a href="#" class="add-card"><i class="flaticon-bag"></i><span>Купить</span></a>
+								<a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a>
+							</div>
+						</div>
+						<div class="pi-text">
+							<h6>$35,00</h6>
+							<p>Iphone</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3 col-sm-6">
+					<div class="product-item">
+						<div class="pi-pic">
+							<img src="./img/product/7.jpg" alt="">
+							<div class="pi-links">
+								<a href="#" class="add-card"><i class="flaticon-bag"></i><span>Купить</span></a>
+								<a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a>
+							</div>
+						</div>
+						<div class="pi-text">
+							<h6>$35,00</h6>
+							<p>Lenova </p>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3 col-sm-6">
+					<div class="product-item">
+						<div class="pi-pic">
+							<img src="./img/product/8.jpg" alt="">
+							<div class="pi-links">
+								<a href="#" class="add-card"><i class="flaticon-bag"></i><span>Купить</span></a>
+								<a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a>
+							</div>
+						</div>
+						<div class="pi-text">
+							<h6>$35,00</h6>
+							<p>Honor</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3 col-sm-6">
+					<div class="product-item">
+						<div class="pi-pic">
+							<img src="./img/product/9.jpg" alt="">
+							<div class="pi-links">
+								<a href="#" class="add-card"><i class="flaticon-bag"></i><span>Купить</span></a>
+								<a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a>
+							</div>
+						</div>
+						<div class="pi-text">
+							<h6>$35,00</h6>
+							<p>ZTE </p>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3 col-sm-6">
+					<div class="product-item">
+						<div class="pi-pic">
+							<img src="./img/product/10.jpg" alt="">
+							<div class="pi-links">
+								<a href="#" class="add-card"><i class="flaticon-bag"></i><span>Купить</span></a>
+								<a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a>
+							</div>
+						</div>
+						<div class="pi-text">
+							<h6>$35,00</h6>
+							<p>Nokia</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3 col-sm-6">
+					<div class="product-item">
+						<div class="pi-pic">
+							<img src="./img/product/11.jpg" alt="">
+							<div class="pi-links">
+								<a href="#" class="add-card"><i class="flaticon-bag"></i><span>Купить</span></a>
+								<a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a>
+							</div>
+						</div>
+						<div class="pi-text">
+							<h6>$35,00</h6>
+							<p>Sony</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3 col-sm-6">
+					<div class="product-item">
+						<div class="pi-pic">
+							<img src="./img/product/12.jpg" alt="">
+							<div class="pi-links">
+								<a href="#" class="add-card"><i class="flaticon-bag"></i><span>Купить</span></a>
+								<a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a>
+							</div>
+						</div>
+						<div class="pi-text">
+							<h6>$35,00</h6>
+							<p>Meizu</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="text-center pt-5">
+				<button class="site-btn sb-line sb-dark">Загрузить больше</button>
+			</div>
+		</div>
+	</section>
+	<!-- Product filter section end -->
+
+
+	<!-- Banner section -->
+	<section class="banner-section">
+		<div class="container">
+			<div class="banner set-bg" data-setbg="img/banner-bg.jpg">
+				<div class="tag-new">Новое</div>
+				<span>Новое поступление</span>
+				<h2>Востоновленая техника</h2>
+				<a href="#" class="site-btn">Просмотреть</a>
+			</div>
+		</div>
+	</section>
+	<!-- Banner section end  -->
+
+
+	<!-- Footer section -->
+	<section class="footer-section">
+		<div class="container">
+			<div class="footer-logo text-center">
+				<a href="index.html"><img src="./img/logo.png" alt=""></a>
+			</div>
+			<div class="row">
+				<div class="col-lg-3 col-sm-6">
+					<div class="footer-widget about-widget">
+						<h2>О нас</h2>
+						<p>Текст</p>
+						<img src="img/cards.png" alt="">
+					</div>
+				</div>
+				<!-- <div class="col-lg-3 col-sm-6">
+					<div class="footer-widget about-widget">
+						<h2>Questions</h2>
+						<ul>
+							<li><a href="">About Us</a></li>
+							<li><a href="">Track Orders</a></li>
+							<li><a href="">Returns</a></li>
+							<li><a href="">Jobs</a></li>
+							<li><a href="">Shipping</a></li>
+							<li><a href="">Blog</a></li>
+						</ul>
+						<ul>
+							<li><a href="">Partners</a></li>
+							<li><a href="">Bloggers</a></li>
+							<li><a href="">Support</a></li>
+							<li><a href="">Terms of Use</a></li>
+							<li><a href="">Press</a></li>
+						</ul>
+					</div>
+				</div> -->
+				<!-- <div class="col-lg-3 col-sm-6">
+					<div class="footer-widget about-widget">
+						<h2>Questions</h2>
+						<div class="fw-latest-post-widget">
+							<div class="lp-item">
+								<div class="lp-thumb set-bg" data-setbg="img/blog-thumbs/1.jpg"></div>
+								<div class="lp-content">
+									<h6>what shoes to wear</h6>
+									<span>Oct 21, 2018</span>
+									<a href="#" class="readmore">Read More</a>
+								</div>
+							</div>
+							<div class="lp-item">
+								<div class="lp-thumb set-bg" data-setbg="img/blog-thumbs/2.jpg"></div>
+								<div class="lp-content">
+									<h6>trends this year</h6>
+									<span>Oct 21, 2018</span>
+									<a href="#" class="readmore">Read More</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div> -->
+				<div class="col-lg-3 col-sm-6">
+					<div class="footer-widget contact-widget">
+						<h2>Вопросы</h2>
+						<div class="con-info">
+							<span>G.</span>
+							<p>Gold Service </p>
+						</div>
+						<div class="con-info">
+							<span>O.</span>
+							<p>str. Victorie 30a </p>
+						</div>
+						<div class="con-info">
+							<span>L.</span>
+							<p>+373 791 07 344</p>
+						</div>
+						<div class="con-info">
+							<span>D.</span>
+							<p>rustimka@mail.ru</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="social-links-warp">
+			<div class="container">
+				<div class="social-links">
+					<a href="" class="instagram"><i class="fa fa-instagram"></i><span>instagram</span></a>
+					<!-- <a href="" class="google-plus"><i class="fa fa-google-plus"></i><span>g+plus</span></a> -->
+					<a href="" class="pinterest"><i class="fa fa-pinterest"></i><span>pinterest</span></a>
+					<a href="" class="facebook"><i class="fa fa-facebook"></i><span>facebook</span></a>
+					<!-- <a href="" class="twitter"><i class="fa fa-twitter"></i><span>twitter</span></a> -->
+					<a href="" class="youtube"><i class="fa fa-youtube"></i><span>youtube</span></a>
+					<!-- <a href="" class="tumblr"><i class="fa fa-tumblr-square"></i><span>tumblr</span></a> -->
+				</div>
+
+
+<p class="text-white text-center mt-5">Rustimka</p>
+
+
+			</div>
+		</div>
+	</section>
+	<!-- Footer section end -->
+
+
+
+	<!--====== Javascripts & Jquery ======-->
+	<script src="js/jquery-3.2.1.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/jquery.slicknav.min.js"></script>
+	<script src="js/owl.carousel.min.js"></script>
+	<script src="js/jquery.nicescroll.min.js"></script>
+	<script src="js/jquery.zoom.min.js"></script>
+	<script src="js/jquery-ui.min.js"></script>
+	<script src="js/main.js"></script>
+	<script src="https://cdn.tailwindcss.com"></script>
+	<script>
+		function switchLang(lang) {
+		  document.getElementById('form-ru').classList.toggle('hidden', lang !== 'ru');
+		  document.getElementById('form-bg').classList.toggle('hidden', lang !== 'bg');
+		}
+	  </script>
+	  <script>
+		function openRegistrationForm() {
+			document.getElementById('authModal').classList.remove('hidden');
+			document.getElementById('registrationForm').classList.remove('hidden');
+			document.getElementById('loginForm').classList.add('hidden');
+		}
+	
+		function openLoginForm() {
+			document.getElementById('authModal').classList.remove('hidden');
+			document.getElementById('loginForm').classList.remove('hidden');
+			document.getElementById('registrationForm').classList.add('hidden');
+		}
+	
+		function showRegistrationForm() {
+			document.getElementById('registrationForm').classList.remove('hidden');
+			document.getElementById('loginForm').classList.add('hidden');
+		}
+	
+		function showLoginForm() {
+			document.getElementById('loginForm').classList.remove('hidden');
+			document.getElementById('registrationForm').classList.add('hidden');
+		}
+	
+		function closeAuthForm() {
+			document.getElementById('authModal').classList.add('hidden');
+		}
+	</script>
+
+	<!-- JavaScript -->
+<script>
+	const modal = document.getElementById('repairModal');
+	const form = document.getElementById('repairForm');
+	const successMessage = document.getElementById('successMessage');
+	const submitBtn = document.getElementById('submitBtn');
+	const submitText = document.getElementById('submitText');
+	const spinner = document.getElementById('spinner');
+  
+	function openModal() {
+	  modal.classList.remove('hidden');
+	  successMessage.classList.add('hidden');
+	}
+  
+	function closeModal() {
+	  modal.classList.add('hidden');
+	  successMessage.classList.add('hidden');
+	  submitBtn.disabled = false;
+	  submitText.textContent = 'Отправить заявку';
+	  spinner.classList.add('hidden');
+	}
+  
+	form.addEventListener('submit', function (e) {
+	  e.preventDefault();
+  
+	  submitBtn.disabled = true;
+	  submitText.textContent = 'Отправка...';
+	  spinner.classList.remove('hidden');
+  
+	  const formData = new FormData(form);
+  
+	  fetch(form.action, {
+		method: form.method,
+		body: formData,
+		headers: {
+		  'Accept': 'application/json'
+		}
+	  })
+		.then(response => {
+		  if (response.ok) {
+			form.reset();
+			successMessage.classList.remove('hidden');
+			submitText.textContent = 'Отправить заявку';
+			spinner.classList.add('hidden');
+  
+			setTimeout(() => {
+			  closeModal();
+			}, 3000);
+		  } else {
+			alert('Произошла ошибка. Попробуйте ещё раз.');
+			resetButton();
+		  }
+		})
+		.catch(() => {
+		  alert('Ошибка сети. Проверьте соединение и попробуйте снова.');
+		  resetButton();
+		});
+	});
+  
+	function resetButton() {
+	  submitBtn.disabled = false;
+	  submitText.textContent = 'Отправить заявку';
+	  spinner.classList.add('hidden');
+	}
+  </script>
+
+
+
+	
+
+	</body>
+</html>
